@@ -1,10 +1,16 @@
 {
-  "html_pages": 3,
-  "local_asset_files": 6,
-  "all_internal_links": "PASS",
-  "external_embeds": 0,
-  "forms": 0,
-  "inline_handlers": 0,
-  "errors": [],
-  "browser_qa": "Desktop preview: main, privacy, support, FAQ and clipboard fallback checked. Mobile layout uses CSS breakpoints; device emulation was not run."
+  "checked_on": "2026-11-02",
+  "source_archive": "dvizhoff.zip",
+  "site_files_in_root": true,
+  "pages": ["index.html", "privacy.html", "support.html"],
+  "asset_path_audit": "PASS (0 missing files)",
+  "python_unittests": "PASS (12)",
+  "node_javascript_tests": "PASS (ring buffer, sanitization, storage failure, export, clear)",
+  "node_syntax_checks": "PASS",
+  "chromium_dom_smoke": "PASS (desktop 1280px, mobile 390px, inline-asset harness; no overflow, JSON export, clear)",
+  "chromium_http_navigation": "BLOCKED_BY_ADMINISTRATOR (environment; not a project error)",
+  "github_pages_remote_status": "NOT_VERIFIED (unavailable remotely)",
+  "github_pages_publish_action": "PREPARED_NOT_EXECUTED",
+  "android_application_source": "NOT_INCLUDED",
+  "android_logger_integration": "NOT_DONE (Kotlin template only)"
 }
