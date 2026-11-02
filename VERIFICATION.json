@@ -1,0 +1,10 @@
+{
+  "html_pages": 3,
+  "local_asset_files": 6,
+  "all_internal_links": "PASS",
+  "external_embeds": 0,
+  "forms": 0,
+  "inline_handlers": 0,
+  "errors": [],
+  "browser_qa": "Desktop preview: main, privacy, support, FAQ and clipboard fallback checked. Mobile layout uses CSS breakpoints; device emulation was not run."
+}
