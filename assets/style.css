@@ -34,3 +34,84 @@
 /* Let the phone illustration shrink below its preferred width on narrow screens. */
 .hero > *{min-width:0}
 @media(max-width:600px){.hero{grid-template-columns:minmax(0,1fr)}}
+
+/* Кнопки первого экрана всегда доступны на телефоне */
+@media (max-width: 600px) {
+  body {
+    padding-bottom: 82px;
+  }
+
+  .hero {
+    padding-top: 24px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    margin-bottom: 14px;
+    font-size: clamp(42px, 13vw, 54px);
+  }
+
+  .lead {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .actions {
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    background: rgba(252, 248, 243, 0.96);
+    box-shadow: 0 -8px 30px rgba(46, 25, 59, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .actions .button {
+    width: auto;
+    flex: 1;
+    min-height: 46px;
+    padding: 9px 10px;
+    font-size: 13px;
+    line-height: 1.15;
+  }
+}
+
+/* Компактный первый экран на невысоких компьютерах */
+@media (min-width: 601px) and (max-height: 800px) {
+  .hero {
+    padding-top: 30px;
+    padding-bottom: 42px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 5.6vw, 70px);
+    margin-bottom: 16px;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .lead {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .actions {
+    margin-top: 18px;
+  }
+
+  .hero-visual .phone {
+    width: 220px;
+  }
+}
