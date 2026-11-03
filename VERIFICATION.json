@@ -1,16 +1,29 @@
 {
-  "checked_on": "2026-11-02",
-  "source_archive": "dvizhoff.zip",
-  "site_files_in_root": true,
-  "pages": ["index.html", "privacy.html", "support.html"],
-  "asset_path_audit": "PASS (0 missing files)",
-  "python_unittests": "PASS (12)",
-  "node_javascript_tests": "PASS (ring buffer, sanitization, storage failure, export, clear)",
+  "date": "2026-11-03",
+  "product": "Орбитакт",
+  "app_version": "3.9.5+18",
+  "python_tests": 12,
+  "python_tests_status": "PASS",
   "node_syntax_checks": "PASS",
-  "chromium_dom_smoke": "PASS (desktop 1280px, mobile 390px, inline-asset harness; no overflow, JSON export, clear)",
-  "chromium_http_navigation": "BLOCKED_BY_ADMINISTRATOR (environment; not a project error)",
-  "github_pages_remote_status": "NOT_VERIFIED (unavailable remotely)",
-  "github_pages_publish_action": "PREPARED_NOT_EXECUTED",
-  "android_application_source": "NOT_INCLUDED",
-  "android_logger_integration": "NOT_DONE (Kotlin template only)"
+  "node_diagnostics_regression": "PASS",
+  "local_asset_audit": "PASS",
+  "browser_desktop_qa": "PASS",
+  "browser_mobile_qa": {
+    "method": "same-origin browser frames",
+    "frame_widths_px": [
+      320,
+      360,
+      390
+    ],
+    "horizontal_overflow": "NONE after narrow hero fix"
+  },
+  "browser_author_link_href": "https://duckolly.github.io/testofsilence/",
+  "browser_image_loading": "PASS, no failed images observed",
+  "browser_copy_template": "Manual-copy fallback verified on HTTP preview; Clipboard API unavailable in that context",
+  "external_http_links": "NOT_VERIFIED; addresses preserved from author instructions",
+  "remote_deployment": "NOT_PERFORMED",
+  "apk_bytes": 18141739,
+  "apk_sha256": "9bb15b83f57256e46f31ec1319f067c65f3a03913faf33d50d4025c22433fe8a",
+  "apk_included": "download/orbitakt-arm64.apk",
+  "git_metadata_in_zip": false
 }

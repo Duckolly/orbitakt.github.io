@@ -10,3 +10,27 @@
 .diagnostics-actions{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
 .diagnostics-box .small{margin:14px 0 0}
 @media(max-width:600px){.diagnostics-box{padding:22px 18px}.diagnostics-actions .button{width:100%}}
+
+/* Orbitakt 3.9.5: night mode and the author's works. */
+.rest-cat{width:100px;height:100px;object-fit:contain;margin:5px 0 22px}
+.sleep-preview{display:grid;grid-template-columns:1fr 290px;gap:60px;align-items:center;margin:60px 0 28px;padding:36px;border:1px solid #d4c3dd;border-radius:32px;background:#f8f2f9}
+.sleep-preview h3{font-size:clamp(28px,3vw,38px)}
+.sleep-preview p{color:var(--muted)}
+.sleep-preview figure{margin:0}.sleep-preview .phone{max-width:260px;margin:auto}
+.sleep-preview figcaption{text-align:center;margin-top:16px;font-size:15px;font-weight:700}
+.author-card{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:48px;border:1px solid var(--line);border-radius:36px;background:linear-gradient(120deg,#f2e8f7,#fffaf5)}
+.author-card>div{min-width:0}.author-card h2{font-size:clamp(36px,4.5vw,58px)}
+.work-formats{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-wrap:wrap;gap:10px}
+.work-formats li{padding:5px 15px;border:1px solid #cbb1dc;border-radius:24px;font-size:14px;font-weight:700}
+.author-address{margin:16px 0 0;overflow-wrap:anywhere}
+.author-art{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;min-height:400px;overflow:hidden;border-radius:50% 50% 28px 28px;background:#e8d9f1}
+.book-shape{width:190px;min-height:265px;transform:rotate(-7deg);display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px;color:#f8effe;border-radius:4px 14px 14px 4px;border-left:10px solid #3c1e52;background:linear-gradient(150deg,#3d234e,#71428d);box-shadow:16px 22px 0 #cdb7dc;z-index:1}
+.book-shape span{font-size:20px;font-weight:700;line-height:1.3;letter-spacing:-.02em}.book-shape strong{font-size:52px;line-height:1.2;font-weight:400;letter-spacing:-.06em}.book-shape small{font-size:12px;color:#ead9f4}
+.art-year{position:absolute;top:20px;right:18px;font-size:80px;line-height:1;font-weight:800;color:#d0b8df;letter-spacing:-.08em}
+.art-label{position:absolute;bottom:10px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#644a74}
+.orbit-ring{position:absolute;border:1px solid #c3a7d5;border-radius:50%;width:360px;height:170px;transform:rotate(-30deg)}.ring-two{transform:rotate(35deg);height:270px}
+@media(max-width:850px){.sleep-preview{gap:28px;padding:28px;grid-template-columns:1fr 240px}.author-card{padding:32px;gap:28px;grid-template-columns:1fr 1fr}.author-art{min-height:350px}}
+@media(max-width:600px){.sleep-preview{grid-template-columns:1fr;padding:24px;gap:26px}.sleep-preview .phone{max-width:240px}.author-card{grid-template-columns:1fr;padding:26px;gap:32px}.author-art{min-height:350px;max-width:360px;width:100%;margin:auto}.author-card h2{font-size:40px}.author-section{padding-top:50px}.book-shape{width:170px;min-height:245px}}
+/* Let the phone illustration shrink below its preferred width on narrow screens. */
+.hero > *{min-width:0}
+@media(max-width:600px){.hero{grid-template-columns:minmax(0,1fr)}}

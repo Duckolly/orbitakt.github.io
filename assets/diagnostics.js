@@ -1,4 +1,4 @@
-/* Движ: local-only website diagnostics, schema v2.
+/* Орбитакт: local-only website diagnostics, schema v2.
  * Installed early in <head> to capture missing CSS/images and script failures.
  * No network, cookies, analytics, or collection of user-entered values.
  */
@@ -130,7 +130,7 @@
         const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'dvizh-site-diagnostics-' + new Date().toISOString().slice(0, 10) + '.json';
+        a.download = 'orbitakt-site-diagnostics-' + new Date().toISOString().slice(0, 10) + '.json';
         document.body.appendChild(a);
         a.click();
         a.remove();

@@ -1,4 +1,4 @@
-name: Publish Dvizh site
+name: Publish Orbitakt site
 
 on:
   push:
@@ -42,10 +42,11 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html privacy.html support.html .nojekyll _site/
-          cp -R assets _site/
+          cp -R assets download _site/
           test -f _site/index.html
           test -f _site/assets/style.css
           test -f _site/assets/diagnostics.js
+          test -f _site/download/orbitakt-arm64.apk
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3

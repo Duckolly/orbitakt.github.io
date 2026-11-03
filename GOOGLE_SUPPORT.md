@@ -2,7 +2,7 @@
 
 ## Откуда отправлять
 
-Из своего Google-аккаунта, который используешь или собираешься использовать для Play Console. Не из Telegram Движа. Публичный email поддержки пользователей и email владельца аккаунта могут отличаться; оба должны быть доступны владельцу для чтения и проверки.
+Из своего Google-аккаунта, который используешь или собираешься использовать для Play Console. Не из Telegram Орбитакта. Публичный email поддержки пользователей и email владельца аккаунта могут отличаться; оба должны быть доступны владельцу для чтения и проверки.
 
 ## Если Play Console уже доступна
 
@@ -36,7 +36,7 @@ Personal account eligibility for a free offline fitness tracker from Russia
 
 Hello Google Play Developer Support,
 
-I am an individual developer residing in Russia and plan to publish a free Android app called Dvizh (Движ).
+I am an individual developer residing in Russia and plan to publish a free Android app called Orbitakt (Орбитакт).
 
 The app provides a step counter using Android's step sensor, approximate distance calculated from a user-configured step length, manual water intake tracking, workout logs, breathing timers and relaxation features. Data stays on the device. There are no ads, subscriptions, in-app purchases, user accounts, Health Connect integration, medical diagnosis, treatment recommendations or human-subject research. The step counter uses ACTIVITY_RECOGNITION and a user-enabled health foreground service.
 
@@ -56,4 +56,4 @@ Sergey Shvetsov
 
 ## Уточнение предыдущего совета
 
-Мы не установили, что Движ обязательно требует организации. В общей справке Google формулировка Health apps широкая, в примерах упомянуты медицинские и исследовательские приложения. Уточнение нужно, чтобы не выдавать нашу интерпретацию за персональное решение Google. Не нужно создавать организацию только на основании прежнего ответа ассистента.
+Мы не установили, что Орбитакт обязательно требует организации. В общей справке Google формулировка Health apps широкая, в примерах упомянуты медицинские и исследовательские приложения. Уточнение нужно, чтобы не выдавать нашу интерпретацию за персональное решение Google. Не нужно создавать организацию только на основании прежнего ответа ассистента.

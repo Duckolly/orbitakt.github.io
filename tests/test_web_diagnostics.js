@@ -65,7 +65,7 @@ function fixture(storageBroken = false) {
   f.log.capture('WEB_TEST', 'support@example.com Bearer xyzsecret', 'WEB');
   assert.match(f.log.recent().at(-1).message, /\[email\].*Bearer \[redacted\]/);
   assert.equal(f.log.export(), true);
-  assert.match(f.getDownload(), /^dvizh-site-diagnostics-\d{4}-\d{2}-\d{2}\.json$/);
+  assert.match(f.getDownload(), /^orbitakt-site-diagnostics-\d{4}-\d{2}-\d{2}\.json$/);
   assert.equal(f.log.clear(), true);
   assert.equal(f.log.recent().length, 0);
 }

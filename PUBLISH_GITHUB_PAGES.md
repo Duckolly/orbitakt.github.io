@@ -1,68 +1,35 @@
-# Восстановление GitHub Pages: `Duckolly/dvizhoff`
+# Публикация сайта Орбитакт на GitHub Pages
 
-## Проверка конфигурации
+Сначала обновите существующий репозиторий сайта содержимым этого ZIP: index.html должен находиться в корне, рядом с assets/ и download/. Не загружайте ZIP как единственный файл и не помещайте файлы в дополнительную вложенную папку.
 
-Нужен репозиторий `https://github.com/Duckolly/dvizhoff` и опубликованная
-ветка `main`. В корне репозитория должны лежать `index.html`, `assets/`,
-`.github/workflows/publish-pages.yml` и `.nojekyll`.
+В исходном комплекте сайт связан с Duckolly/dvizhoff; адрес сайта при сохранении этого репозитория — https://duckolly.github.io/dvizhoff/ . Название «Орбитакт» в интерфейсе не требует переименования репозитория. Репозиторий приложения https://github.com/Duckolly/orbitakt и авторский сайт https://duckolly.github.io/testofsilence/ имеют другое назначение.
 
-**Не загружайте папку `dvizhoff/` целиком внутрь репозитория.**
-При загрузке архива на GitHub раскройте папку и загрузите её *содержимое*.
-После публикации файл `index.html` должен открываться по адресу
-`https://duckolly.github.io/dvizhoff/`, а не `.../dvizhoff/dvizhoff/`.
+## Порядок
 
-## Рекомендуемый путь (GitHub Actions)
-
-1. Скопируйте все файлы из этого комплекта в локальный клон `dvizhoff`.
-2. Запустите тесты и проверьте дерево проекта.
-3. Сделайте коммит и push в `main`:
+1. Скопировать содержимое ZIP в корень локального клона сайта. Сохранить .git.
+2. Убедиться, что download/ — папка с orbitakt-arm64.apk, а не прежний пустой файл download. При конфликте типов удалить только пустой файл download и повторить копирование папки.
+3. Проверить изменения:
 
 ```bash
-python -m unittest discover -s tests -v
-python tools/site_audit_fix.py . --repo dvizhoff --check
+git diff --check
 git status --short
-git add .
-git commit -m "fix: publish dvizhoff and enable local web diagnostics"
-git push origin main
 ```
 
-4. На GitHub: **Settings → Pages → Source → GitHub Actions**.
-   Если проект раньше публиковался из ветки, обязательно переключите Source.
-5. **Actions → Publish Dvizh site**: должны успешно завершиться `build` и `deploy`.
-   При красном статусе открыть job logs. Если виден только check workflow,
-   проверьте наличие `publish-pages.yml` в `main` и настройки Actions.
+4. Добавить файлы, создать коммит и выполнить push в main. Обновить в том числе .github/workflows/publish-pages.yml и .nojekyll.
+5. GitHub → Settings → Pages → Source → GitHub Actions.
+6. Actions → Publish Orbitakt site → дождаться успешных build и deploy. Workflow публикует страницы, assets и download с APK; служебные документы и Android-шаблоны не публикуются.
 
-Workflow запускается также через `workflow_dispatch` (кнопка Run workflow).
-Он проверяет пути и загружает только публичные HTML/CSS/JS/PNG.
+Для другого бесплатного статического хостинга достаточно index.html, privacy.html, support.html, assets/, download/ и .nojekyll. Сборка и VM не нужны.
 
-## Как распознать причину
+## Проверки
 
-| Симптом | Что проверять |
-| --- | --- |
-| GitHub Pages 404 целиком | Source, ветка main, успешный deploy, index.html в корне, корректное имя repo |
-| HTML открывается без стилей | DevTools → Network → `assets/style.css` (HTTP 200?), правильный регистр имени |
-| Не показываются скриншоты | Network → `assets/*.png`, что изображения реально закоммичены |
-| Старая версия после push | Actions → крайний deploy, hard refresh / инкогнито / кеш браузера |
-| GitHub Actions отказ в правах | Settings → Actions, разрешения workflow и Pages, защищённая среда github-pages |
-| Кнопки диагностики не работают | Network → `assets/diagnostics.js` и `assets/support.js`, ошибки Console, доступность localStorage |
+На главной должны быть новая иконка, название Орбитакт и блок произведений. Ссылки:
 
-Сайт не требует DNS-записей и внешнего сервера; CNAME не нужен, пока нет своего домена.
-Если Source всё же должен остаться «Deploy from a branch», workflow не является
-вариантом публикации; используйте `main / (root)` и отдельно проверяйте
-результат Pages. Не включайте обе схемы без необходимости.
+- download/orbitakt-arm64.apk — APK 3.9.5+18 с этого же сайта.
+- privacy.html и support.html — локальные страницы.
+- https://duckolly.github.io/testofsilence/ — общий сайт книги, рассказа и комикса.
+- https://github.com/Duckolly/orbitakt — исходники приложения.
 
-## Что проверено и что пока не подтверждено
+При 404 у главной проверить источник Pages и расположение index.html. При 404 у APK проверить наличие папки download в репозитории и в workflow. При старом названии или иконке обновить страницу с очисткой кеша и дождаться завершения последнего deploy.
 
-Локально: наличие файлов, ссылки, синтаксис JS, HTTP-обслуживание и тесты
-(если выполнены, см. `VERIFICATION.json`).
-
-Не подтверждено: настоящий HTTP-статус `https://duckolly.github.io/dvizhoff/`,
-фактическая настройка Pages в `Duckolly/dvizhoff`, права на публикацию,
-результат Actions после push. Для этого нужен доступ к GitHub.
-
-## Google Play
-
-После публикации укажите URL политики `https://duckolly.github.io/dvizhoff/privacy.html`.
-В карточке приложения необходим рабочий email для связи. Telegram допустим
-как дополнительный канал, но не как замена обязательному email. Сведения
-о регистрации разработчика и правилах — в `GOOGLE_SUPPORT.md`.
+Внешние адреса и состояние настроек удалённого GitHub Pages не подтверждены этой локальной проверкой. Публикация на удалённый сайт не выполнялась.
