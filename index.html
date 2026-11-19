@@ -7,7 +7,7 @@
 <meta name="description" content="Орбитакт — бесплатный офлайн-трекер для Android. Шаги, приблизительные километры, вода по 200 мл и дыхание перед сном. Для пользователей 16+. История на телефоне, без рекламы и аккаунта.">
 <meta name="theme-color" content="#682781">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://api.counterapi.dev; object-src 'none'; base-uri 'none'; form-action 'none'">
 <script src="assets/diagnostics.js">
 </script>
 <link rel="icon" type="image/png" href="assets/icon.png">
@@ -35,9 +35,10 @@
 <h1>Свой темп.<br>Своя орбита.</h1>
 <p class="lead">Шаги, вода и спокойное дыхание перед сном. Орбитакт помогает замечать повседневную активность — без аккаунта, рекламы и постоянного подключения к интернету.</p>
 <div class="actions">
-<a class="button primary" href="download/orbitakt-arm64.apk" download="orbitakt-arm64.apk">Скачать APK · 3.9.5</a>
+<a class="button primary" id="download-btn" href="download/orbitakt-arm64.apk" download="orbitakt-arm64.apk">Скачать APK · 3.9.5</a>
 <a class="button" href="#screens">Посмотреть приложение</a>
 </div>
+<p class="download-counter">Скачиваний приложения: <strong id="download-count">117</strong></p>
 <p class="small">Бесплатная предварительная сборка 3.9.5 для Android ARM64 · 16+. APK загружается с этого сайта. Устанавливайте поверх предыдущей версии без удаления приложения.</p>
 <ul class="tags" aria-label="Особенности">
 <li>Данные на телефоне</li>
@@ -252,5 +253,6 @@
 <p class="small">© 2026 Сергей Швецов. Приложение для личного учёта активности, не медицинское изделие.</p>
 </div>
 </footer>
+<script src="assets/download-counter.js" defer></script>
 </body>
 </html>

@@ -34,3 +34,5 @@
 /* Let the phone illustration shrink below its preferred width on narrow screens. */
 .hero > *{min-width:0}
 @media(max-width:600px){.hero{grid-template-columns:minmax(0,1fr)}}
+
+.download-counter{display:inline-flex;align-items:center;gap:6px;margin:0 0 14px;padding:6px 14px;border:1px solid var(--line);border-radius:20px;background:#fffaf5;font-size:14px;color:var(--muted)}.download-counter strong{color:var(--purple);font-weight:800}
